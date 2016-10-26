@@ -5,7 +5,6 @@
     <title>Roger de la Fuente García - CV</title>
     <meta name="description" content="Roger de la Fuente García">
     <meta name="author" content="Roger de la Fuente García">
-    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
     <style type="text/css">
@@ -23,15 +22,24 @@
         a {
             text-decoration: none
         }
+
+	.updated #cv-link {
+	    display: none;
+        }
     </style>
+    <script type="application/javascript">        
+	if(document.location.hostname==='rawgit.com'){
+            document.getElementsByTagName('html')[0].className='updated';
+        }
+    </script>
 </head>
 <body>
 <div id="cv-link">
-    <button id="update-button" title="Last version is always available in Github." class="update-cv button-primary" onclick="document.location.href='https://rawgit.com/rupperyes/curriculum-vitae/master/rogerdelafuente.html'">Available in Github</button>
+    <a id="update-button" title="Last version is always available in Github." class="update-cv button button-primary" href="https://rawgit.com/rupperyes/curriculum-vitae/master/rogerdelafuente.html">Available in Github</a>
 </div>
 <div class="container">
     <div class="row">
-        <h2 >Roger de la Fuente García</h2>
+        <h2>Roger de la Fuente García</h2>
     </div>
 
     <div class="row media-links">
@@ -56,7 +64,7 @@
     </div>
     <br/>
     <h4>Introduction</h4>
-    <p>I'm a 27 year old computer enthusiast. I've been coding for around 14 years, which is right now more than 50% of my life. I worked since I was 16, in different places and with diverse responsabilities. Currently I work as Atlassian solutions Architect and Developer for atSistemas, but I'm pretty much into anything that says ALM and Orchestration tools. If you put those two together - which should be easy - you'll have me listening for hours.</p>
+    <p>I'm a 28 year old computer enthusiast. I've been coding for around 15 years, which is right now more than 50% of my life. I worked since I was 16, in different places and with diverse responsabilities. Currently I work in Atlassian as a Growth developer, but I'm pretty much into anything that says ALM and Orchestration tools. If you put those two together - which should be easy - you'll have me listening for hours.</p>
     <div class="row">
         <h4>Skills</h4>
         <p>I learn fast, and I expect my job to let me learn new things every day and at the same time let me contribute in making something useful for someone else. I like challenges, and I've faced them in many aspects of my job. Under a technical point of view, I've worked in GIS, HA Systems, Cloud & Virtualization, Continuous Integration, Delivery and Deployment, Team Collaboration tools, etc. As for team working, I've been in all kind of teams, from 2 people startup style to 20 people teams. I've also coordinated small groups of developers. I worked for a couple of years as a teacher in a private education center for old school developers, showing them state of the art technologies,
@@ -75,7 +83,7 @@
             <tr>
                 <td>2016</td>
                 <td>Today</td>
-                <td>Developer at Atlassian in the Sydney office.</td>
+                <td>Developer at Atlassian in the Sydney office. I landed in Purchasing, with my team being moved to Growth shortly after. I've been coding experiments around the tops of the different funnels the company has, including pricing and revenue experiments.</td>
                 <td>Sydney</td>
             </tr>
             <tr>
