@@ -1,74 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--
+    Welcome to my CV - I love the fact that you're looking at the source! I wanted to keep it simple and without any
+    libraries, apart of skeleton for the CSS. So forgive me for not using this opportunity to overcomplicate things
+    and show you what my frontend coding skills are. I'll be happy to prove those in online / face to face tests
+    or whatever you want to come up with :)
+    -->
+
     <meta charset="UTF-8">
     <title>Roger de la Fuente García - CV</title>
-    <meta name="description" content="Roger de la Fuente García">
-    <meta name="author" content="Roger de la Fuente García">
+    <meta name="author" content="Roger de la Fuente García"/>
+    <meta name="keywords" content="Developer Java Html5 Javascript React Aws Python Ruby"/>
+    <meta name="description" content="Roger's Curriculum Vitae."/>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
     <style type="text/css">
         div#cv-link {
             position: fixed;
-            top:0;
-            right:0;
+            top: 0;
+            right: 0;
         }
 
-        img.media-icon{
-            height:18px;
-            width:18px;
+        img.media-icon {
+            height: 18px;
+            width: 18px;
         }
 
         a {
             text-decoration: none
         }
 
-	.updated #cv-link {
-	    display: none;
+        p {
+            text-align: justify;
+        }
+
+        .updated #cv-link {
+            display: none;
+        }
+
+        .updated .updateInfo {
+            display: none;
+        }
+
+        .onlineInfo {
+            display: none;
+        }
+
+        .updated .onlineInfo {
+            display: block;
         }
     </style>
-    <script type="application/javascript">        
-	if(document.location.hostname==='rawgit.com'){
-            document.getElementsByTagName('html')[0].className='updated';
+    <script type="application/javascript">
+        if (document.location.hostname === 'rawgit.com') {
+            document.getElementsByTagName('html')[0].className = 'updated';
         }
     </script>
 </head>
 <body>
 <div id="cv-link">
-    <a id="update-button" title="Last version is always available in Github." class="update-cv button button-primary" href="https://rawgit.com/rupperyes/curriculum-vitae/master/rogerdelafuente.html">Available in Github</a>
+    <a id="update-button" title="Last version is always available in Github." class="update-cv button button-primary"
+       href="https://rawgit.com/rupperyes/curriculum-vitae/master/rogerdelafuente.html">Available in Github</a>
 </div>
 <div class="container">
     <div class="row">
         <h2>Roger de la Fuente García</h2>
     </div>
 
-    <div class="row media-links">
+    <div class="row">
         <div class="three columns">
-            <img alt="gmail" title="gmail" class="media-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABUJJREFUeNq8V11sVEUU/ubeu7vd/to/bLvbVjRiQCwPAiHEBGoCJCYiCYSgMTFq0geDmKhPoFGjPPigD01Dog8mPhEajQ0mamtibGwMgfoCGBCSAu1SQpBi9//+zXjO3e7u3Z9WkJZJZnN35tzzfeebc2bmCqUUuFlH3xjUrlwYEPG5ECwTK9KCIajGFlOuXvtl8MixQzwkmID5zv6/NHtujdb7CES4jkY1wJWAWiZgQV0nn0pCZVKQ165CBlouhT4bfkKkPhwYFJPjbwZ29APxLJCxAMclY7W80QtiYehAOAg0hWGP/QK1afvnInFgsxN88jFdMwVUKrv8wFWIiLoauEEJ+8KUYziJeT1oGHBvz+cifxAt6UB0NMGJzxuGbTtQpgmZLYteN4AXKU+e3nZ/YH+MA8cHKaec4pgjoGVrwNiG7SrITAbSLMt8YQNjwxCBELB+c24N76VxMOdPQ5EPZDOVS0uYjG3YUhJ4Bq5dpfSuXACGDkMjJbRtu++eBIHJ8ZOQHPlijTAZmwgoWoIs5BK1r0ZPAK0dEKzE3eBT5C69o5bwqZkGGDu3BMSmhECASsW2iv+nL0N+8RG051+B/sxzVEp11b1SjbsTP0B+/zXUnVulc2U+paktLAEToAR0fQS0x/sg/zxT6uBmDIIkVU0t0Dc9WxXfPXcKDtukEpURl/nUssIjoFm047kmE7AKXX/5bYgtO+EKvWTc+WcO1vEhOBM/esvGu6jX6ZnHvDmy8b/DPtgX+ywZp3cY27BoHVh+17aLBdC7BsbA+3BJUuf30dIoL5+D/ekhhA4eRWDHPm/M/vUkzKEjVVUxNvV7vkRNLWEUl0C3FBjbYBbStImVU1qFoTACL7wKd+4WnLOnKpN45CsISsz8M0dVAd63xfPBvjzylj8HJClA6oz2PazWt2ZhJou7YPPYTDGjSZ3M0HswR4e9w6Qk23mP8LaM8j1EQ2jXfoQPfgIRDBWG7+zsLjyH6nWcv12zoIBFCtjSV8aqJHuDe15DduoiJdFkKZDtVN/u12303uF3/b5cn720WIHgQhXQ+ruOqk6Aq6s9CjnwAep+PoHk2DeQ6WT12q6tR/3Ofcjsegmp1i40lPlxHR8BO1cFpICiCRfuIudQKpVClsp09dbtkOvWw7o5i9TET1VtazZsRetbH0N7qA3T09NIJBJoaGgoEnCljwxdggpl6OQOwnzPl1cymaQtO4Pe3l7vv2hoRvPAYYQos/323HmM59iGbaPRKB02NuLxeMGf3z5HQDIB5UVfToDB0+k0enp6vP+SzwxOnqc2InJsBLX9uwv2/MxjPMc2bFuNRAkBN6eA4VfALztHngcvzwloOlpefxeZ6zHvLz8rGlNSVixLJBJBLBbzlsOPkVfA24g4N+wyAt3d3V4ki94v125AdPB4rlDaOyiixS8znZ2dmJ2dLcFgzMJG5BCOrwo91lUjL2t666pcRi9BNN86Ojpww2fGmJ4Cdj4HfJN34/D/ND8GYy5cSFSFAkvJeT/NLlOgcB8oJ7BSClQQyF/Jpu4AjbXF75CVUiC/BHyxY0zboBxwiAWdSbiYVHi09sEoMJUGejQBxjb4g4luAqKWaF1O51RYNze3IgQupXPRN9APn58afRlqbV2R786Q4i10422kicDCYeTtfMvY2Sf7ZgzGmiTM9mhk2LBmpve2Njbduhqfb+siWZpJknA4/J97wL1/kQlEyD9dhHCVpCfMv81r1w4Y3q6WmG/XuqPfnr1+Y0/GdrTIzMyKLMFvlARhw5CrujtHgrHYXh77V4ABAIFQpp2WQhu2AAAAAElFTkSuQmCC"/>
+            <img alt="gmail" title="gmail" class="media-icon"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABUJJREFUeNq8V11sVEUU/ubeu7vd/to/bLvbVjRiQCwPAiHEBGoCJCYiCYSgMTFq0geDmKhPoFGjPPigD01Dog8mPhEajQ0mamtibGwMgfoCGBCSAu1SQpBi9//+zXjO3e7u3Z9WkJZJZnN35tzzfeebc2bmCqUUuFlH3xjUrlwYEPG5ECwTK9KCIajGFlOuXvtl8MixQzwkmID5zv6/NHtujdb7CES4jkY1wJWAWiZgQV0nn0pCZVKQ165CBlouhT4bfkKkPhwYFJPjbwZ29APxLJCxAMclY7W80QtiYehAOAg0hWGP/QK1afvnInFgsxN88jFdMwVUKrv8wFWIiLoauEEJ+8KUYziJeT1oGHBvz+cifxAt6UB0NMGJzxuGbTtQpgmZLYteN4AXKU+e3nZ/YH+MA8cHKaec4pgjoGVrwNiG7SrITAbSLMt8YQNjwxCBELB+c24N76VxMOdPQ5EPZDOVS0uYjG3YUhJ4Bq5dpfSuXACGDkMjJbRtu++eBIHJ8ZOQHPlijTAZmwgoWoIs5BK1r0ZPAK0dEKzE3eBT5C69o5bwqZkGGDu3BMSmhECASsW2iv+nL0N+8RG051+B/sxzVEp11b1SjbsTP0B+/zXUnVulc2U+paktLAEToAR0fQS0x/sg/zxT6uBmDIIkVU0t0Dc9WxXfPXcKDtukEpURl/nUssIjoFm047kmE7AKXX/5bYgtO+EKvWTc+WcO1vEhOBM/esvGu6jX6ZnHvDmy8b/DPtgX+ywZp3cY27BoHVh+17aLBdC7BsbA+3BJUuf30dIoL5+D/ekhhA4eRWDHPm/M/vUkzKEjVVUxNvV7vkRNLWEUl0C3FBjbYBbStImVU1qFoTACL7wKd+4WnLOnKpN45CsISsz8M0dVAd63xfPBvjzylj8HJClA6oz2PazWt2ZhJou7YPPYTDGjSZ3M0HswR4e9w6Qk23mP8LaM8j1EQ2jXfoQPfgIRDBWG7+zsLjyH6nWcv12zoIBFCtjSV8aqJHuDe15DduoiJdFkKZDtVN/u12303uF3/b5cn720WIHgQhXQ+ruOqk6Aq6s9CjnwAep+PoHk2DeQ6WT12q6tR/3Ofcjsegmp1i40lPlxHR8BO1cFpICiCRfuIudQKpVClsp09dbtkOvWw7o5i9TET1VtazZsRetbH0N7qA3T09NIJBJoaGgoEnCljwxdggpl6OQOwnzPl1cymaQtO4Pe3l7vv2hoRvPAYYQos/323HmM59iGbaPRKB02NuLxeMGf3z5HQDIB5UVfToDB0+k0enp6vP+SzwxOnqc2InJsBLX9uwv2/MxjPMc2bFuNRAkBN6eA4VfALztHngcvzwloOlpefxeZ6zHvLz8rGlNSVixLJBJBLBbzlsOPkVfA24g4N+wyAt3d3V4ki94v125AdPB4rlDaOyiixS8znZ2dmJ2dLcFgzMJG5BCOrwo91lUjL2t666pcRi9BNN86Ojpww2fGmJ4Cdj4HfJN34/D/ND8GYy5cSFSFAkvJeT/NLlOgcB8oJ7BSClQQyF/Jpu4AjbXF75CVUiC/BHyxY0zboBxwiAWdSbiYVHi09sEoMJUGejQBxjb4g4luAqKWaF1O51RYNze3IgQupXPRN9APn58afRlqbV2R786Q4i10422kicDCYeTtfMvY2Sf7ZgzGmiTM9mhk2LBmpve2Njbduhqfb+siWZpJknA4/J97wL1/kQlEyD9dhHCVpCfMv81r1w4Y3q6WmG/XuqPfnr1+Y0/GdrTIzMyKLMFvlARhw5CrujtHgrHYXh77V4ABAIFQpp2WQhu2AAAAAElFTkSuQmCC"/>
             <a href="mailto:rdelafuentegarcia@gmail.com">rdelafuentegarcia</a>
         </div>
         <div class="three columns">
-            <img alt="linkedin" title="linkedin" class="media-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABMNJREFUeNq8V01oXFUU/t7PTGfSmSQzk9+mSdDENkZqY0Xpwt+IiH/gD+ImhSq6kiK4sSkuXBTahVRX4kKkCApaFd0VtUorQS0UalNF7djY1NjUZJLM/+S9d+/znDedn/feJHQx6YWTmXty7vm+e849Z+5VbNsGj+e+nLmfPl4juZOkDxsz5kjOkBw59tRNJ1mhMIFnv0ju744EDg3HwwjpClQFuMaraUMhn5J8liwbyaUirubMyc+fGT6sPP3pH7zzEw8Nx7RUwUDJlBBk2WR8ED402lkooCLREsSJ5LIg1QO6lOLg7sE27Uq2hOyq1fSde0feBEwhcdfWiPbzbPqgLoS1Q9J+U3nD2fmNGIYl0R8LgbDHdClEW96QyJYs3MjBmIytS8tCwRSO1I/B9hD27uxGXzSI/yhuH567ij9TxaYRYDzG5hSgyAQMdwT27ujEzu7NzveOlgBevqMHrx5PwmpSmhiTsZ0I5GmS9xBoD2queWyThlWy5TJqzmGsi0DeiYA7BR/9+DcOPDFanR/94SJSORMKN4kmEXAiICwTuQYRePenSzg5PYftW9pwYT6Dc2kD0Z5Y084AYzI2EbCcSdFDYFM8ivPZIs7+vgAtFES4o9Wx0ailBXXFk0/pfCborHRtDjrfr2RXsbJOZTGmYlUiQHVZ9FTBm+NDeHKk02lM3Ea/Tabw+tcXcO9gDG8/tr1qlyaQic+msWesFy/s2oJYOODoF6lyPjk/jyNTlyi6wkcgQ5iRcgRMmtDhMt1sEwo1i7ZQdd6h2Y6NKBQx0F7TZ0sm3nl0Gx4cSrjWd0WC2Ld7ADeT7cSxaQhPi2XMMGGrgpymqTWuWsIlhoeQQeF39JZbHw0FquCyQR9/fKQLj9yS8PlnTMZWKykwPWJ7nPGc9UL4QeZSOex56zh27fsYB45OwRLS3VNu7/H5Z0xRSYGUtEB68uTbDf1Cko0tpc/slfe+x1ezWSAUwi+nkhgdiGNi/NaqzWhXxFnrWifLBFSL/oCdCo94CfCc9R4C+ZKB0yuUltYIEKQDmIhh6uKCy6aFm5rXP/mxKhFwbgoexw0JSD8xnilUptTca7qA7kufzz9hllPAh03K6yCANez4WuXWK40uFT4C5UNYjgAvsCX8iJ452WiNOjGvrV/fiIDt32D1EMK+jgigHEZdabQ7T4jXip6HULUV+3Zw7f7mmnM7JBsFbruArpJOuNarHpK6pjSIABNYJwWZQglLmdoFJJ0vOTYGtex6fa64Sr3BTaBomC6bxUxhzRQoiecn7dTYfcDlRU93+RdYSdfmrVGgfyv13hwwe7mmV1VgeIhDUdMtLdOv0Xxd+KgMR7a5/fd3IHH2VF0KvIeur7cs3mRG6ZZ020ijk1j7Gm8vy3qHupoCuhRghh4sevCGXkox80/1SpZW5hfa7OUVoLeHdsgdbYPIGEY5hZQeJdZOxWPl+Fo+rcYD94gF+udvv2LDXyZcTdEo1KgOuSzOqFJYb+gLSaH0dlLTDnP9VYq7yYKyb8JgLH3xL8HYzuM0+PBL++1w6yEZjkMWBD9dys2lmYP7SlCH2qJBLS5BKWYmjW/eP6xUfvf18Rcrz/O7SXo2KAFcm6f5eW5994HzPP9fgAEAZEc2PNQ/TbUAAAAASUVORK5CYII="/>
+            <img alt="linkedin" title="linkedin" class="media-icon"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABMNJREFUeNq8V01oXFUU/t7PTGfSmSQzk9+mSdDENkZqY0Xpwt+IiH/gD+ImhSq6kiK4sSkuXBTahVRX4kKkCApaFd0VtUorQS0UalNF7djY1NjUZJLM/+S9d+/znDedn/feJHQx6YWTmXty7vm+e849Z+5VbNsGj+e+nLmfPl4juZOkDxsz5kjOkBw59tRNJ1mhMIFnv0ju744EDg3HwwjpClQFuMaraUMhn5J8liwbyaUirubMyc+fGT6sPP3pH7zzEw8Nx7RUwUDJlBBk2WR8ED402lkooCLREsSJ5LIg1QO6lOLg7sE27Uq2hOyq1fSde0feBEwhcdfWiPbzbPqgLoS1Q9J+U3nD2fmNGIYl0R8LgbDHdClEW96QyJYs3MjBmIytS8tCwRSO1I/B9hD27uxGXzSI/yhuH567ij9TxaYRYDzG5hSgyAQMdwT27ujEzu7NzveOlgBevqMHrx5PwmpSmhiTsZ0I5GmS9xBoD2queWyThlWy5TJqzmGsi0DeiYA7BR/9+DcOPDFanR/94SJSORMKN4kmEXAiICwTuQYRePenSzg5PYftW9pwYT6Dc2kD0Z5Y084AYzI2EbCcSdFDYFM8ivPZIs7+vgAtFES4o9Wx0ailBXXFk0/pfCborHRtDjrfr2RXsbJOZTGmYlUiQHVZ9FTBm+NDeHKk02lM3Ea/Tabw+tcXcO9gDG8/tr1qlyaQic+msWesFy/s2oJYOODoF6lyPjk/jyNTlyi6wkcgQ5iRcgRMmtDhMt1sEwo1i7ZQdd6h2Y6NKBQx0F7TZ0sm3nl0Gx4cSrjWd0WC2Ld7ADeT7cSxaQhPi2XMMGGrgpymqTWuWsIlhoeQQeF39JZbHw0FquCyQR9/fKQLj9yS8PlnTMZWKykwPWJ7nPGc9UL4QeZSOex56zh27fsYB45OwRLS3VNu7/H5Z0xRSYGUtEB68uTbDf1Cko0tpc/slfe+x1ezWSAUwi+nkhgdiGNi/NaqzWhXxFnrWifLBFSL/oCdCo94CfCc9R4C+ZKB0yuUltYIEKQDmIhh6uKCy6aFm5rXP/mxKhFwbgoexw0JSD8xnilUptTca7qA7kufzz9hllPAh03K6yCANez4WuXWK40uFT4C5UNYjgAvsCX8iJ452WiNOjGvrV/fiIDt32D1EMK+jgigHEZdabQ7T4jXip6HULUV+3Zw7f7mmnM7JBsFbruArpJOuNarHpK6pjSIABNYJwWZQglLmdoFJJ0vOTYGtex6fa64Sr3BTaBomC6bxUxhzRQoiecn7dTYfcDlRU93+RdYSdfmrVGgfyv13hwwe7mmV1VgeIhDUdMtLdOv0Xxd+KgMR7a5/fd3IHH2VF0KvIeur7cs3mRG6ZZ020ijk1j7Gm8vy3qHupoCuhRghh4sevCGXkox80/1SpZW5hfa7OUVoLeHdsgdbYPIGEY5hZQeJdZOxWPl+Fo+rcYD94gF+udvv2LDXyZcTdEo1KgOuSzOqFJYb+gLSaH0dlLTDnP9VYq7yYKyb8JgLH3xL8HYzuM0+PBL++1w6yEZjkMWBD9dys2lmYP7SlCH2qJBLS5BKWYmjW/eP6xUfvf18Rcrz/O7SXo2KAFcm6f5eW5994HzPP9fgAEAZEc2PNQ/TbUAAAAASUVORK5CYII="/>
             <a href="https://www.linkedin.com/in/rdelafuentegarcia" title="LinkedIn profile">rdelafuentegarcia</a>
         </div>
         <div class="three columns">
-            <img alt="twitter" title="twitter" class="media-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABHRJREFUeNq8V11oHFUU/mbmzuzu7H9s87Mt2NbSgrZYFAShYEF8Kvjqqz4KxQefWuhjoH0SlUKf9UnwDwT1qaAvIkrVEsXWJBrTpEmMabqb2dmduffOeM5sNtmknXXFbA6cCTtzc7/vfOdn7hhxHIPt85XoBfrzJvmz5IcwHFskv0n+1vkx82u+YTCBz+6pi3lhXKk6BizTgEEPNnntmRm0KW+poxjrYYymii+9XBNXjY/nA478xrGSsFoaULQqiocTPsUGQZ6zgN8bitBwTiitJ4+UbMvXMdoRhmoEAUkeE4nDedOaa8hJIbU+bZk2PAp9WJHvtjbFXhZERuszQipdZi1kvE/om0poqjTGZgXoRpz4flqSDsJmBajwYvL/VwDHXAtjGQt1GWHa15D/kk8Vm6wARCgVIqQrkLMM2NRDDZVO8Hhe4FTRTtrMo3VZk/PcnwBjMrYIlSLwKF0BKtkXD7pYDjRmfYklqqDerYvCxFMFu9Pr5EddgSPkv2yE+NWTfVPA2ERAJz9UigJLBPzVqo9zRGKcJF4niW97IeZaKnl+gqLn/t4xdMhPFR38Herk/9MJbKaAo5fRoxWgDCBLFyYoKBVV28Tz1SwezyncagQ4nBWpUZ7M25hvyZQaMDopCOjCLSj7FOFqKBHoDCzRGdNsNQIeJUWYVJqNZgSeLjngIbfYlqj31JGkIgySGpASSpMCOp3Az80gqdjztQoyPXr3A++qd7qYxU/1Fjy5szMYk7FFoDoKhFE6gbxjYSLn7AAfxBjuh/UmFigNPrd7zzPGZOxOCgg81P3nwIdza/h2pY5Xj4+i6oiBCPzpBXhvdpUCEKhkbYieABgz2KoBlkPrvpsdoIK6H6qEKCs5iBhfLKxhopjp9H3MGD0KaCshYHIlsvxtve00R5Lh03uPPSbU92dW+qaraz+uebhDCuzeo+u8x1YXBHQjUNv0uOCeqeZxMOvizkYbLfpdsgWeLOdwpuJSW5p9wafue3h76i7GaY/efXstwdwiQO3RktsLIz4l/bGCl2ojeO2JMTgDFh+n5qOZJXww+xcmRoo79nyIgIq227BNLHcvzjoOPqGNvvxtCa+crOHsoSqclMi5Lr5ffoBPKT33qE7GqoVOUfcpK8bstCGxaCUE1EOLCq6DgDZ859YcJr+5jThlXBtULwU3g5GSi0oxlyp7rzFm0H0ZtUgOP00uHr+VQuKDmC/1QOsYs/Mykhw9EQg19tMYk7ETBXhK+Y9IwTCNMTdfxwpNqftW7DCMMRMC3PPTC6vQtrOvBKbvrnaOZHSpLy49KMt1D/lxarWCC2vAWf+fD6I8yj0fzeV12NSqjtIeE5gyBc622234UzMY9uGY3+BmMY+MKLICN/lYfhnzizfEgVErpEMDWgHiSAN7TYSADZO+yXIZiMfKCOcXuOguJx+n+QvXLsaueyUqlqD50EkTKt5jKXhYGbYNK2vB3GjA8P1LzWsXrhpdoMzr73Y/z58jHx9SBpbJv+PP8+D6G8nn+T8CDAAwL9lUnUQrdQAAAABJRU5ErkJggg=="/>
+            <img alt="twitter" title="twitter" class="media-icon"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABHRJREFUeNq8V11oHFUU/mbmzuzu7H9s87Mt2NbSgrZYFAShYEF8Kvjqqz4KxQefWuhjoH0SlUKf9UnwDwT1qaAvIkrVEsXWJBrTpEmMabqb2dmduffOeM5sNtmknXXFbA6cCTtzc7/vfOdn7hhxHIPt85XoBfrzJvmz5IcwHFskv0n+1vkx82u+YTCBz+6pi3lhXKk6BizTgEEPNnntmRm0KW+poxjrYYymii+9XBNXjY/nA478xrGSsFoaULQqiocTPsUGQZ6zgN8bitBwTiitJ4+UbMvXMdoRhmoEAUkeE4nDedOaa8hJIbU+bZk2PAp9WJHvtjbFXhZERuszQipdZi1kvE/om0poqjTGZgXoRpz4flqSDsJmBajwYvL/VwDHXAtjGQt1GWHa15D/kk8Vm6wARCgVIqQrkLMM2NRDDZVO8Hhe4FTRTtrMo3VZk/PcnwBjMrYIlSLwKF0BKtkXD7pYDjRmfYklqqDerYvCxFMFu9Pr5EddgSPkv2yE+NWTfVPA2ERAJz9UigJLBPzVqo9zRGKcJF4niW97IeZaKnl+gqLn/t4xdMhPFR38Herk/9MJbKaAo5fRoxWgDCBLFyYoKBVV28Tz1SwezyncagQ4nBWpUZ7M25hvyZQaMDopCOjCLSj7FOFqKBHoDCzRGdNsNQIeJUWYVJqNZgSeLjngIbfYlqj31JGkIgySGpASSpMCOp3Az80gqdjztQoyPXr3A++qd7qYxU/1Fjy5szMYk7FFoDoKhFE6gbxjYSLn7AAfxBjuh/UmFigNPrd7zzPGZOxOCgg81P3nwIdza/h2pY5Xj4+i6oiBCPzpBXhvdpUCEKhkbYieABgz2KoBlkPrvpsdoIK6H6qEKCs5iBhfLKxhopjp9H3MGD0KaCshYHIlsvxtve00R5Lh03uPPSbU92dW+qaraz+uebhDCuzeo+u8x1YXBHQjUNv0uOCeqeZxMOvizkYbLfpdsgWeLOdwpuJSW5p9wafue3h76i7GaY/efXstwdwiQO3RktsLIz4l/bGCl2ojeO2JMTgDFh+n5qOZJXww+xcmRoo79nyIgIq227BNLHcvzjoOPqGNvvxtCa+crOHsoSqclMi5Lr5ffoBPKT33qE7GqoVOUfcpK8bstCGxaCUE1EOLCq6DgDZ859YcJr+5jThlXBtULwU3g5GSi0oxlyp7rzFm0H0ZtUgOP00uHr+VQuKDmC/1QOsYs/Mykhw9EQg19tMYk7ETBXhK+Y9IwTCNMTdfxwpNqftW7DCMMRMC3PPTC6vQtrOvBKbvrnaOZHSpLy49KMt1D/lxarWCC2vAWf+fD6I8yj0fzeV12NSqjtIeE5gyBc622234UzMY9uGY3+BmMY+MKLICN/lYfhnzizfEgVErpEMDWgHiSAN7TYSADZO+yXIZiMfKCOcXuOguJx+n+QvXLsaueyUqlqD50EkTKt5jKXhYGbYNK2vB3GjA8P1LzWsXrhpdoMzr73Y/z58jHx9SBpbJv+PP8+D6G8nn+T8CDAAwL9lUnUQrdQAAAABJRU5ErkJggg=="/>
             <a href="https://www.twitter.com/rdelafuente" title="Twitter profile">rdelafuente</a>
 
         </div>
         <div class="three columns">
-            <img alt="skype" title="skype" class="media-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABbBJREFUeNq8V1tsVFUUXefcO9PpTNupfUyJlCLER7U8NKBG1KhBjcoP+OEjfBiNfkhMTPyRRhONgZSYoCHxwx+/TAwkfpmoiaKIkUhqwCYgLW15FChQoPTdmbmPc13n3E7pvLQmjDvZmbnn3rvXPmuvs8+5IggCaPtsSD3Gn3fo6+hLURkbph+hf/LWcnlQDwidwJ4z3vZkRHSlYhKWEBC8Edxk5FxMn3hXMgoTbtD59gp7l9g96OiZ/7Sq3rYmPAFH6YcqM32LWUQlkLQDHB/3fA49bvtK7Wivs60xF5glcoWwjXkMrieo+Ht7jbROTno7bE+p1YGUmMpWbuaFpnGqqySIfa/t+SrpciCrSj+8qga4MyGQsIBpktY7HWBwlgF4TcmYYLMcz6j/xoTG1Ng6AbiM4hYEkKzX040C7TVifqzOBm6tElhXByT4PyJCYaWZwOVsgL4ZYGBmcWV0fZMAbFcxAQ44BW91JPLBF1p9JPwN5tQdJxsr44IODJGxH0cDXHf/JQHtxCYDPv8UM7C6DPjRsQC/XFUYyQSGypgGZ7JPtUi0MYnl1QIvLhHYe0nhilOeC42nsaXrKVMPrc6F3hgpTmDfOYVPBzwMke7AFrCjAlnq4OhkgA+Oe+gZCwFrWZ7NTIiPFMXNucbU2NI1DBQ/0D+Vn/352QA/cOatSYmOeomXWyVebZN4tsVCA2fdXCfxxVmfyg6fb44CD/LZsgloJ7ZtEjAM5AN+f8nHmnrbNA9tA1MK9XGt4ADPc3ZN0fBGe4KCpRL2X1PoaBZGvDm7Pylw4HqAaa9ECQIRJuDoEsxltdD6WeNhzrotEUZsqBImSZ3mnj4PW1ot3MMZag080SgJJs3KWFg4fb08JvDnZFBSAxrbMKADFzLQUM2WGb1xfTcpXjqqcIZJDVID7/Y4SBJ8zS0SDzdb2JCyUEq2LZFidrU5cyWgCP2wMah817RWWzdCsnHhjWUW1tZKxEn/skYLsRoLPVz7Xb0eXvo1g/2X/CIgElAU26wAI0JdgjIMzFAYha25kcDbbrNwLi1xjJropVBPk5F4TJjGsvMvB6mqKqxpkPPvTLtBWQYcI0LNAMJlsdCuc3CUOmhN5BN7gZ2uleu9jb14Uwp6W8Xv4wp7L/pINVjYP+LnJXCKrdst0Q4MJrGlo1uxaUT5rrPuvpYv369Oudjy8wy2HkzPNy6eI/AMNdBsI3yvoBGvpUZKxTfPmlbs+fNrs9C+GfaxuS0yv7TIOlKpiOlw2w6lsXFpuEwPX/FxjL01yhKtrbfyYqwnG84QSoswp4FSfUDbad74+oyLF1aGzX/rChvnfBd/jAc4kSZDJ7JmPM5tsbZG4iHOdmNLfgIoE1v3gXkNlBKh2RGJu7svizu4BO9rslDD3vrRXVEcGPXRPeYbJjQ5S9gjNrD+jzZYxTFEuWUYhAy4rIMTlC6BOctxqb1+aBYfr4+R8oih/Ekmo30xduSqXzK2xtTYZi/IzjFQyj1yqMjAa7/NovPwLPrG/UUfPM5SNB/2pEvG1ZjufAn+gYGQBoEkW9o+LrEvB6fQUceGRAaaqiWy7Cj9TGqKenmlvQqr2aAc5njwoovPex24FKVdjoFcCbJlNFBoUXbBCMU2wPNb74gHn+CCS97mUpSszZtkyOU9oU+/ce4NejOzSmsgZGBuL8iocA0v+ozP5RbRXjCeSNl513riqkzcTG471uey85ddeFUS/6cZzLkz4cTUWDapuGXGmiKwefyVEVERUEWdeDNk/JoLSWHHlJrWDByT9vQjmWwcmYFMyFsljURL6iNuTWoGjkh+Gb0fXDjpW00UlC6DZAZBhZyxNYbGCob7fY1tPk6ru77bHiSSXaq2BcpPIPAiWj03eeY8Ydik3pqBnBqBmJnoTHc+t0vkPs+jO7/NfZ4/oLtrhQpwmd6tP8+d9zaZz/O/BRgA8kCie7/oWhUAAAAASUVORK5CYII="/>
+            <img alt="skype" title="skype" class="media-icon"
+                 src="data:image/png;base64,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"/>
             <a href="skype:rupperyes?chat">rupperyes</a>
 
         </div>
     </div>
     <br/>
-    <h4>Introduction</h4>
-    <p>I'm a 28 year old computer enthusiast. I've been coding for around 15 years, which is right now more than 50% of my life. I worked since I was 16, in different places and with diverse responsabilities. Currently I work in Atlassian as a Growth developer, but I'm pretty much into anything that says ALM and Orchestration tools. If you put those two together - which should be easy - you'll have me listening for hours.</p>
+    <div class="row">
+        <h4>Introduction</h4>
+        <p>I'm a <span class="currentAge">29</span> years old computer programmer. I've been coding for around <span class="codingForYears">16</span> years,
+            which is right now more than 50% of my life. I worked since I was 16, in different places and with diverse
+            responsabilities. Currently I work in Atlassian as a Jira Frontend developer, rebuilding a 14 years old product's
+            interface from scratch.</p>
+    </div>
     <div class="row">
         <h4>Skills</h4>
-        <p>I learn fast, and I expect my job to let me learn new things every day and at the same time let me contribute in making something useful for someone else. I like challenges, and I've faced them in many aspects of my job. Under a technical point of view, I've worked in GIS, HA Systems, Cloud & Virtualization, Continuous Integration, Delivery and Deployment, Team Collaboration tools, etc. As for team working, I've been in all kind of teams, from 2 people startup style to 20 people teams. I've also coordinated small groups of developers. I worked for a couple of years as a teacher in a private education center for old school developers, showing them state of the art technologies,
-            <a href="https://www.youtube.com/watch?v=QuUTmUHMQ2M">and I've also given some talks</a> and done random stuff of that kind.</p>
+        <p>I learn fast, and I expect my job to let me learn new things every day and at the same time let me contribute
+            in making a big impact whenever possible. I like challenges, and I've faced them in many aspects in my
+            career. From a technical point of view I've worked in GIS, HA Systems, Cloud & Virtualization, Continuous
+            Integration, Delivery and Deployment, Team Collaboration tools, Frontend development, etc.
+            As for team working, I've been in all kind of teams, from 2 people startup style to 20 people teams
+            I've also coordinated small groups of developers.
+            I worked for a couple of years as a teacher in a private education center for old school
+            developers, showing them state of the art technologies,
+            <a href="https://www.youtube.com/watch?v=QuUTmUHMQ2M">and I've also given some talks</a> and done random
+            stuff of that kind.</p>
         <h4>Timeline</h4>
         <table class="u-full-width">
             <thead>
@@ -83,31 +126,60 @@
             <tr>
                 <td>2016</td>
                 <td>Today</td>
-                <td>Developer at Atlassian in the Sydney office. I landed in Purchasing, with my team being moved to Growth shortly after. I've been coding experiments around the tops of the different funnels the company has, including pricing and revenue experiments.</td>
+                <td>
+                    Developer at
+                    <a href="https://www.atlassian.com">Atlassian</a>
+                    in the Sydney office. I landed in Billing Systems, with my whole team being
+                    moved to Growth shortly after. After half a year hacking Atlassian's funnel to reduce friction
+                    in the signup process for our customers I moved to Jira's new UI team, where we built a React
+                    application from scratch for the company's flagship product.
+                </td>
                 <td>Sydney</td>
             </tr>
             <tr>
                 <td>2012</td>
                 <td>2016</td>
-                <td>Atlassian Expert in atSistemas. I developed custom add-ons for many Atlassian products, doing everything from simple add-on API-based development, Atlassian Connect APIs, to source code diving and product hacking. Also solution architectural design and product installation, configuration, etc. I also participated in the Application Lifecycle Management solution design for many client companies, helping to implement different methodologies into the tools like Agile/Scrum and others.</td>
+                <td>Atlassian Expert in
+                    <a href="https://www.atsistemas.com">atSistemas</a>
+                    . I developed custom add-ons for many Atlassian products, doing
+                    everything from simple add-on API-based development, Atlassian Connect APIs, etc. to source code diving
+                    and product hacking. Also solution architectural design and product installation, configuration,
+                    etc. I also participated in the Application Lifecycle Management solution design for many client
+                    companies, helping to implement different methodologies into the tools like Agile/Scrum and others.
+                </td>
                 <td>Madrid & Barcelona</td>
             </tr>
             <tr>
                 <td>2011</td>
                 <td>2012</td>
-                <td>Geographical Information Systems analyst and developer in Aurensis (Telespazio Spain). I developed a web application with intensive use of GIS technologies provided by Oracle GIS. We even implemented our own Route Solving algorithm to allow for custom traffic constraints in route resolution, which Oracle NPM couldn't provide. Front-end map display technologies and Java server side treatment of GIS related data.</td>
+                <td>Geographical Information Systems analyst and developer in Aurensis
+                    (<a href="https://www.telespazio.com/">Telespazio</a>
+                    Spain). I developed a
+                    web application with intensive use of GIS technologies provided by Oracle GIS. We even implemented
+                    our own Route Solving algorithm to allow for custom traffic constraints in route resolution, which
+                    Oracle NPM couldn't provide. Front-end map display technologies and Java server side treatment of
+                    GIS related data.
+                </td>
                 <td>Barcelona</td>
             </tr>
             <tr>
                 <td>2009</td>
                 <td>2013</td>
-                <td>Teacher in a private academy oriented to recycle old-school developers and introduce them to state of the art technology and best practices. Linux Sysadmin, Java, Javascript, Groovy, J2EE, Ruby + ROR, Python + Django, PostgreSQL admin, MySQL admin, etc. First as full-time employee and later as a freelance.</td>
+                <td>Teacher in a private academy oriented to recycle old-school developers and introduce them to state
+                    of the art technology and best practices. Linux Sysadmin, Java, Javascript, Groovy, J2EE, Ruby +
+                    ROR, Python + Django, PostgreSQL admin, MySQL admin, etc. First as full-time employee and later as a
+                    freelance.
+                </td>
                 <td>Barcelona</td>
             </tr>
             <tr>
                 <td>2008</td>
                 <td>2010</td>
-                <td>Developer in the Federation of Medical Associations of Spain (OMC, CGCOM), in European level identity and permission delegation for medical authorization, with the goal of providing a way for regional governments to legally authorize specific medical operations to their qualified doctors abroad for a period of time. SOAP services with SAMLv2 tech.</td>
+                <td>Developer in the Federation of Medical Associations of Spain (OMC, CGCOM), in European level
+                    identity and permission delegation for medical authorization, with the goal of providing a way for
+                    regional governments to legally authorize specific medical operations to their qualified doctors
+                    abroad for a period of time. SOAP services with SAMLv2 tech.
+                </td>
                 <td>Barcelona</td>
             </tr>
             <tr>
@@ -119,20 +191,19 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td>During all periods, jobs as freelance for different start-ups and software companies, like 1000jobboersen, ADTZ, etc.</td>
-                <td>Online</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>And some other jobs like barista in Caffè Nero, in London, and ice cream seller in Italy (Firenze, Bolonia).</td>
+                <td>And some other random jobs like barista in Caffè Nero, in London, and ice cream master in Italy (Firenze,
+                    Bolonia).
+                </td>
                 <td>London, Firenze, Bolonia</td>
             </tr>
             </tbody>
         </table>
         <h4>Personal</h4>
-        <p>I was born in Barcelona, from where I moved away when I was 18. Since then I've lived in London, Italy, Barcelona again, Madrid and other corners of Spain. Currently in Sydney.</p>
-        <p>I'm not only passionate about computers! My hobbies are all related to mountains, and it will be difficult for me to move to anywhere I can't reach them. When close to a mountain I'll do kayaking, paragliding, skiing, hiking, biking and others. I also do skydiving and I play a bit of saxophone. If I end up living close to the sea again I'll learn to dive and to sail.</p>
+        <p>I was born in Barcelona, from where I moved away when I was 18. Since then I've lived in London, Italy,
+            Barcelona again, Madrid and other corners of Spain. Currently in Sydney.</p>
+        <p>I'm not only passionate about computers! My hobbies are all related to nature. When close to a mountain I'll
+            do kayaking, paragliding, skiing, hiking, biking and others. I also do skydiving and I play a bit of saxophone.
+            When close to the sea my mind can't stop thinking about sailing.</p>
     </div>
     <div class="row">
         <div class="column one-half">
@@ -148,7 +219,7 @@
                 <tbody>
                 <tr>
                     <td>English</td>
-                    <td>High</td>
+                    <td>Proficient</td>
                     <td>Cambridge Advanced Use of English</td>
                 </tr>
                 <tr>
@@ -180,7 +251,27 @@
         </div>
     </div>
 
-    <p>This is my techie CV. It should correctly display in the browser of your preference - if it doesn't please tell me - as long as you use a modern one. You can always press the up-right button to see the last version directly in Github, if you aren't already.</p>
+    <p class="updateInfo">This is my techie CV. It should correctly display in the browser of your preference - if it doesn't please tell
+        me - as long as you use a modern one. You can always press the up-right button to see the last version directly
+        in Github.</p>
+    <p class="onlineInfo">This is my techie CV. It should correctly display in the browser of your preference - if it doesn't please tell
+        me - as long as you use a modern one. You are seeing the latest and most updated version directly in Github.</p>
 </div>
+
+<script type="application/javascript">
+    var myBirthDate = new Date(1988, 0, 20, 8, 25);
+    var codingSince = new Date(2001, 8, 1);
+    var myAge = Math.floor((new Date().getTime() - myBirthDate.getTime()) / 31557600000);
+    var codingForYears = Math.floor((new Date().getTime() - codingSince.getTime()) / 31557600000);
+    update(document.getElementsByClassName("currentAge"), myAge);
+    update(document.getElementsByClassName("codingForYears"), codingForYears);
+
+    function update(elements, content) {
+        for(var i = 0; i < elements.length; i++) {
+            elements[i].innerText = content;
+        }
+    }
+
+</script>
 </body>
 </html>
